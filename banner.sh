@@ -47,3 +47,4 @@ banner2="
 "
 echo "$banner2" > /etc/bannerssh
 /etc/init.d/ssh restart
+echo -e "\033[1;37mTerminado !!!\033[0m"
