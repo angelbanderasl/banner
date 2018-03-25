@@ -18,6 +18,8 @@ banner="{
 sed -i 's/DROPBEAR_BANNER=""/DROPBEAR_BANNER="/etc/issue.net"/g' /etc/default/dropbear
 echo "$banner" > /etc/issue.net
 service dropbear restart
+read -p ": " bannerssh
+echo "$bannerssh" > /etc/bannerssh
 
 banner2={
 <BR><font color='#DAA520'>===============================================</BR></font>
