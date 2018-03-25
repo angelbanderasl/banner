@@ -2,7 +2,7 @@
 
 ########## Banner ##########
 
-banner="{
+banner3="{
 <BR><font color='#DAA520'>===========================================</BR></font>
 <BR><font color='#008080'>******************Servicio Premium******************</BR></font>
 <BR><font color='#DAA520'>===========================================</BR></font>
@@ -16,10 +16,26 @@ banner="{
 }
 "
 sed -i 's/DROPBEAR_BANNER=""/DROPBEAR_BANNER="/etc/issue.net"/g' /etc/default/dropbear
-echo "$banner" > /etc/issue.net
+echo "$banner3" > /etc/issue.net
 service dropbear restart
+
+sshd_config_bak=$(cat /etc/ssh/sshd_config |grep -v "Banner")
+echo "$sshd_config_bak" > /etc/ssh/sshd_config
+echo "Banner /etc/bannerssh" >> /etc/ssh/sshd_config
+service ssh restart 1>/dev/null 2>/dev/null
+service sshd restart 1>/dev/null 2>/dev/null
+if [ -f /etc/bannerssh ]
+then
+banner=$(cat /etc/bannerssh)
+else
+banner="No hay un banner de momento"
+fi
+echo -e "\033[1;32mBanner atual\n\n\033[1;37m$banner\n\033[0m"
+echo "Cual es el banner que desea agregar (ctrl + c para salir )"
 read -p ": " bannerssh
 echo "$bannerssh" > /etc/bannerssh
+service ssh restart 1> /dev/null 2>/dev/null
+service sshd restart 1>/dev/null 2>/dev/null
 
 banner2={
 <BR><font color='#DAA520'>===============================================</BR></font>
