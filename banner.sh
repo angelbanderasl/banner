@@ -2,7 +2,7 @@
 
 ########## Banner ##########
 
-banner3="{
+banner3="
 <BR><font color='#DAA520'>===========================================</BR></font>
 <BR><font color='#008080'>******************Servicio Premium******************</BR></font>
 <BR><font color='#DAA520'>===========================================</BR></font>
@@ -13,7 +13,6 @@ banner3="{
 <BR><font color='#860086'> -------------CONECTANDO AL MUNDO VIRTUAL-------------</BR></font>
 <BR><font color='#DAA520'>===========================================</BR></font>
 <BR><font color='#1E90FF'> Validando acceso.....</BR></font>
-}
 "
 sed -i 's%DROPBEAR_BANNER=""%DROPBEAR_BANNER="/etc/issue.net"%g' /etc/default/dropbear
 echo "$banner3" > /etc/issue.net
@@ -37,7 +36,7 @@ echo "$bannerssh" > /etc/bannerssh
 service ssh restart 1> /dev/null 2>/dev/null
 service sshd restart 1>/dev/null 2>/dev/null
 
-banner2="{
+banner2="
 <BR><font color='#DAA520'>===============================================</BR></font>
 <BR><font color='#008080'>********************Servicio Premium********************</BR></font>
 <BR><font color='#DAA520'>===============================================</BR></font>
@@ -48,7 +47,6 @@ banner2="{
 <BR><font color='#860086'> ----------------CONECTANDO AL MUNDO VIRTUAL----------------</BR></font>
 <BR><font color='#DAA520'>===============================================</BR></font>
 <BR><font color='#1E90FF'> Validando acceso.....</BR></font>
-}
 "
 echo "$banner2" > /etc/bannerssh
 /etc/init.d/ssh restart
