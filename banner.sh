@@ -15,7 +15,7 @@ banner3="{
 <BR><font color='#1E90FF'> Validando acceso.....</BR></font>
 }
 "
-sed -i 's/DROPBEAR_BANNER=""/DROPBEAR_BANNER="/etc/issue.net"/g' /etc/default/dropbear
+sed -i 's%DROPBEAR_BANNER=""%DROPBEAR_BANNER="/etc/issue.net"%g' /etc/default/dropbear
 echo "$banner3" > /etc/issue.net
 service dropbear restart
 
