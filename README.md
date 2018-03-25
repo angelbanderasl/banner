@@ -1,2 +1,2 @@
-# wget https://raw.githubusercontent.com/angelbanderasl/banner/banner.sh && bash banner.sh
+# wget https://raw.githubusercontent.com/angelbanderasl/banner/master/banner.sh && bash banner.sh
 
