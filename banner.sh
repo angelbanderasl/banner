@@ -29,10 +29,7 @@ banner=$(cat /etc/bannerssh)
 else
 banner="No hay un banner de momento"
 fi
-echo -e "\033[1;32mBanner atual\n\n\033[1;37m$banner\n\033[0m"
-echo "Cual es el banner que desea agregar (ctrl + c para salir )"
-read -p ": " bannerssh
-echo "$bannerssh" > /etc/bannerssh
+echo "bannerssh" > /etc/bannerssh
 service ssh restart 1> /dev/null 2>/dev/null
 service sshd restart 1>/dev/null 2>/dev/null
 
